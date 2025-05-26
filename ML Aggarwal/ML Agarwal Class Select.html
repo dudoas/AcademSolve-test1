@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademSolve - ML Aggarwal Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #eeeeee; /* Light text */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #333333; /* Darker track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #555555; /* Medium gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #777777; /* Lighter gray on hover */
+        }
+
+        /* Custom styles for subtle animations/transitions */
+        .solution-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* More refined transition */
+        }
+        .solution-card:hover {
+            transform: translateY(-8px) scale(1.02); /* More pronounced lift and slight scale */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Stronger, darker shadow on hover */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-gray-900 shadow-lg py-5 px-6 md:px-12 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-blue-400 tracking-tight">AcademSolve</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#" class="text-gray-300 hover:text-blue-400 font-semibold text-lg transition duration-300 ease-in-out">ML Aggarwal</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-blue-400 font-semibold text-lg transition duration-300 ease-in-out">RS Aggarwal</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-gray-300 hover:text-blue-400 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-16 md:py-24">
+        <div class="max-w-5xl mx-auto bg-gray-800 p-10 md:p-16 rounded-xl shadow-2xl">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-10 text-center leading-tight">
+                <span class="block text-blue-400">ML Aggarwal</span> Solutions
+            </h1>
+
+            <p class="text-2xl font-semibold text-gray-300 mb-8 border-b-4 border-blue-600 pb-4 text-center">
+                Explore comprehensive solutions for your textbooks:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 6 ICSE</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Detailed and easy-to-understand solutions for Class 6 ICSE curriculum.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 7 ICSE</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Step-by-step guidance for all exercises in Class 7 ICSE textbooks.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 8 ICSE</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">In-depth explanations and solutions for Class 8 ICSE topics.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 9 ICSE</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Master Class 9 ICSE concepts with our comprehensive solutions.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 10 ICSE</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Ace your exams with complete solutions for Class 10 ICSE.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 11 ISC Vol-1</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Solutions for Class 11 ISC, Volume 1, covering all chapters.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 11 ISC Vol-2</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Complete solutions for Class 11 ISC, Volume 2, for deeper understanding.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 12 ISC Vol-1</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Expert solutions for Class 12 ISC, Volume 1, exam preparation.</p>
+                </a>
+
+                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Class - 12 ISC Vol-2</h3>
+                    <p class="text-gray-300 text-base leading-relaxed">Comprehensive solutions for Class 12 ISC, Volume 2, with clear explanations.</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-gray-500 py-8 mt-16">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2025 AcademSolve. All rights reserved.</p>
+            <p class="mt-2">Designed with passion for students.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

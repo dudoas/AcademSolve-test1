@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademSolve - Free Solutions for ICSE and CBSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-gray: #2c2f33;
+            --light-gray: #ececec;
+            --white: #ffffff;
+            --text-color: #bbbbbb;
+            --card-bg: #36393f;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white); /* Main background is white */
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            text-decoration: none;
+        }
+
+        .header .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .header .nav-links li {
+            margin-left: 30px;
+        }
+
+        .header .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .header .nav-links a:hover {
+            color: #007bff; /* Example hover color */
+        }
+
+        .hero-section {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 5%;
+            margin-top: 20px; /* Space between header and hero section */
+        }
+
+        .hero-section h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .solutions-section {
+            background-color: var(--dark-gray); /* Same as hero section background */
+            padding: 60px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .solution-card {
+            background-color: var(--card-bg);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            width: 30%; /* Approx 3 cards per row */
+            min-width: 280px; /* Minimum width for responsiveness */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .solution-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .solution-card p {
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .solution-card {
+                width: 45%; /* 2 cards per row on medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+            }
+
+            .header .nav-links li {
+                margin-left: 0;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+
+            .hero-section {
+                padding: 80px 5%;
+            }
+
+            .hero-section h1 {
+                font-size: 40px;
+            }
+
+            .solution-card {
+                width: 90%; /* 1 card per row on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 32px;
+            }
+            .hero-section p {
+                font-size: 16px;
+            }
+            .solution-card {
+                padding: 30px;
+            }
+            .solution-card h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">AcademSolve</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Free Solutions for ICSE</h1>
+            <p>Access comprehensive solutions for your textbooks easily and efficiently.</p>
+        </section>
+
+        <section class="solutions-section">
+            <div class="solution-card">
+                <h3>ML Aggarwal</h3>
+                <p>Access solutions for ML Aggarwal books.</p>
+            </div>
+            <div class="solution-card">
+                <h3>RS Aggarwal</h3>
+                <p>Access solutions for RS Aggarwal books.</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
