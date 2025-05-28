@@ -3,858 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcademSolve - ML Aggarwal Class 6 Solutions</title>
+    <title>AcademSolve - ML Aggarwal Chapters & Exercises</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS Variables for a refined dark theme */
-        :root {
-            --primary-color: #6366f1; /* Indigo 500 */
-            --secondary-color: #f59e0b; /* Amber 500 */
-            --dark-bg: #0F172A; /* Slate 900 - very dark */
-            --light-bg: #1E293B; /* Slate 800 - slightly lighter */
-            --card-bg: #2B3A4F; /* A distinct, slightly muted blue-gray for cards */
-            --text-color: #E2E8F0; /* Slate 200 - light gray for general text */
-            --heading-color: #F8FAFC; /* White - for main headings */
-            --border-color: #334155; /* Slate 700 - for subtle borders */
-            --shadow-color: rgba(0, 0, 0, 0.5); /* Stronger shadow */
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            line-height: 1.7; /* Slightly increased line height for readability */
-            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #eeeeee; /* Light text */
         }
-
         /* Custom scrollbar for better aesthetics */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--light-bg);
+            background: #333333; /* Darker track */
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
+            background: #555555; /* Medium gray thumb */
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #4f46e5; /* Indigo 600 */
+            background: #777777; /* Lighter gray on hover */
         }
 
-        /* Header styles */
-        .header {
-            background-color: var(--light-bg);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px var(--shadow-color); /* Deeper shadow */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 2.5rem; /* Larger logo */
-            color: var(--primary-color);
-            transition: color 0.3s ease, transform 0.2s ease;
-        }
-        .logo:hover {
-            color: var(--secondary-color);
-            transform: scale(1.02);
-        }
-
-        .nav-link {
-            color: var(--text-color);
+        /* Styles for the chapter links */
+        .chapter-link {
+            display: block; /* Make links block level */
+            padding: 10px 0;
+            color: #a3e635; /* A bright green for links */
             font-weight: 500;
-            font-size: 1.15rem; /* Slightly larger nav links */
-            position: relative;
-            transition: color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px; /* Thicker underline */
-            bottom: -8px; /* Lower underline */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary-color);
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px); /* Subtle lift */
-        }
-        .nav-link:hover::after {
-            width: 100%;
+        .chapter-link:hover {
+            color: #84cc16; /* Slightly darker green on hover */
+            transform: translateX(5px); /* Subtle slide effect on hover */
         }
 
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a202c 100%);
-            padding: 100px 0 80px;
+        .chapter-section {
+            margin-bottom: 3rem; /* Space between chapter blocks */
+        }
+
+        .model-paper {
+            background-color: #334155; /* Slightly different dark background for distinction */
+            padding: 1.5rem 2rem;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
         }
-        .hero-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4.5rem; /* Even larger title */
-            font-weight: 800;
-            color: var(--heading-color);
-            margin-bottom: 1.5rem;
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.5); /* Stronger text shadow */
-        }
-        .hero-subtitle {
-            font-size: 1.6rem; /* Larger subtitle */
-            color: #94a3b8; /* Slate 400 */
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* Main Content Area */
-        .main-content-area {
-            background-color: var(--light-bg);
-            border-radius: 16px; /* More rounded corners */
-            box-shadow: 0 15px 40px var(--shadow-color); /* Even deeper shadow */
-            margin-top: -80px; /* Pull it further up */
-            position: relative;
-            z-index: 10;
-            border: 1px solid var(--border-color); /* Subtle border */
-        }
-
-        /* Chapter Heading */
-        .chapter-heading {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            font-size: 2.75rem; /* Larger chapter titles */
+        .model-paper a {
+            color: #facc15; /* A gold/yellow for model paper link */
             font-weight: 700;
-            border-bottom: 4px solid var(--primary-color); /* Thicker border */
-            padding-bottom: 15px;
-            margin-bottom: 40px; /* More space below heading */
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-        }
-
-        /* Exercise Link Cards */
-        .exercise-link-card {
-            background-color: var(--card-bg); /* Distinct card background */
-            border: 1px solid var(--border-color);
-            border-radius: 10px; /* Slightly more rounded */
-            padding: 25px; /* More padding */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-            display: flex; /* Use flex for icon and text alignment */
-            align-items: center;
+            font-size: 1.25rem;
             text-decoration: none;
-            position: relative; /* For the pseudo-element glow */
-            overflow: hidden; /* Hide overflow for glow effect */
+            transition: color 0.2s ease-in-out;
         }
-        .exercise-link-card::before { /* Subtle glow effect */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 0;
-        }
-        .exercise-link-card:hover::before {
-            opacity: 1;
-        }
-        .exercise-link-card:hover {
-            transform: translateY(-8px); /* More pronounced lift */
-            box-shadow: 0 15px 35px var(--shadow-color); /* Deeper shadow on hover */
-            background-color: #374760; /* Slightly lighter card on hover */
-            border-color: var(--primary-color); /* Primary color border on hover */
-        }
-        .exercise-link-card .icon {
-            color: var(--primary-color);
-            font-size: 1.8rem; /* Larger icon */
-            margin-right: 15px; /* Space between icon and text */
-            flex-shrink: 0; /* Prevent icon from shrinking */
-        }
-        .exercise-link-card .link-text {
-            color: var(--text-color);
-            font-size: 1.25rem; /* Larger text */
-            font-weight: 600; /* Bolder text */
-            transition: color 0.3s ease;
-            flex-grow: 1; /* Allow text to take available space */
-            position: relative; /* Ensure text is above pseudo-element */
-            z-index: 1;
-        }
-        .exercise-link-card:hover .link-text {
-            color: var(--secondary-color); /* Change text color on hover */
+        .model-paper a:hover {
+            color: #eab308; /* Darker yellow on hover */
         }
 
-        /* Model Paper Card */
-        .model-paper-card {
-            background: linear-gradient(45deg, #1d4ed8, #4f46e5); /* Blue to Indigo gradient */
-            border-radius: 16px; /* More rounded */
-            padding: 40px; /* More padding */
-            margin-top: 50px; /* More space above */
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            border: 1px solid #3b82f6; /* Border matching gradient start */
-        }
-        .model-paper-card:hover {
-            transform: scale(1.03); /* More pronounced scale */
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
-            background: linear-gradient(45deg, #2563eb, #6366f1); /* Slightly brighter gradient on hover */
-        }
-        .model-paper-card a {
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800; /* Bolder text */
-            font-size: 1.75rem; /* Larger text */
-            text-decoration: none;
-            display: block;
-            transition: color 0.2s ease;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-        .model-paper-card a:hover {
-            color: #ffeb3b; /* Brighter yellow on hover */
-        }
-
-        /* Footer styles */
-        .footer {
-            background-color: var(--light-bg);
-            color: #94a3b8; /* Slate 400 */
-            border-top: 1px solid var(--border-color);
-            font-size: 0.95rem;
-            padding: 40px 5%;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .hero-title {
-                font-size: 3.5rem;
-            }
-            .hero-subtitle {
-                font-size: 1.4rem;
-            }
-            .chapter-heading {
-                font-size: 2.25rem;
-            }
-            .exercise-link-card .link-text {
-                font-size: 1.1rem;
-            }
-            .model-paper-card a {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                padding: 15px;
-            }
-            .logo {
-                margin-bottom: 15px;
-                font-size: 2rem;
-            }
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
-            .nav-link {
-                font-size: 1rem;
-            }
-            .hero-section {
-                padding: 60px 0;
-            }
-            .hero-title {
-                font-size: 2.8rem;
-            }
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            .main-content-area {
-                margin-top: -40px;
-                padding: 20px;
-            }
-            .chapter-heading {
-                font-size: 2rem;
-                margin-bottom: 25px;
-            }
-            .exercise-link-card {
-                padding: 20px;
-            }
-            .exercise-link-card .icon {
-                font-size: 1.5rem;
-                margin-right: 10px;
-            }
-            .exercise-link-card .link-text {
-                font-size: 1rem;
-            }
-            .model-paper-card {
-                padding: 25px;
-            }
-            .model-paper-card a {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.75rem;
-            }
-            .hero-section {
-                padding: 40px 0;
-            }
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            .main-content-area {
-                padding: 15px;
-            }
-            .chapter-heading {
-                font-size: 1.75rem;
-            }
-            .exercise-link-card {
-                padding: 15px;
-            }
-            .exercise-link-card .icon {
-                font-size: 1.2rem;
-                margin-right: 8px;
-            }
-            .exercise-link-card .link-text {
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
 
-    <header class="header flex flex-col sm:flex-row justify-between items-center px-5 py-4 lg:px-10">
-        <a href="/" class="logo">AcademSolve</a>
-        <nav class="mt-4 sm:mt-0">
-            <ul class="nav-links flex space-x-6 sm:space-x-8">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Solutions</a></li>
-                <li><a href="#" class="nav-link">Resources</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="bg-gray-900 shadow-lg py-5 px-6 md:px-12 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-blue-400 tracking-tight">AcademSolve</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#" class="text-gray-300 hover:text-blue-400 font-semibold text-lg transition duration-300 ease-in-out">ML Aggarwal</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-blue-400 font-semibold text-lg transition duration-300 ease-in-out">RS Aggarwal</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-gray-300 hover:text-blue-400 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <h1 class="hero-title">Master Class 6 Maths</h1>
-            <p class="hero-subtitle">Dive deep into ML Aggarwal solutions, chapter by chapter, exercise by exercise. Your path to academic excellence starts here.</p>
-        </section>
-
-        <div class="container mx-auto px-4 py-8 md:py-12 main-content-area">
-            <h1 class="text-4xl lg:text-5xl font-extrabold text-center mb-10 text-heading-color font-['Montserrat']">
-                Class 6 ML Aggarwal Solutions
+    <main class="flex-grow container mx-auto px-6 py-16 md:py-24">
+        <div class="max-w-4xl mx-auto bg-gray-800 p-10 md:p-16 rounded-xl shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-10 text-center leading-tight">
+                <span class="block text-blue-400">Class 6 ML Aggarwal</span> Solutions 
             </h1>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 1 Knowing Our Numbers</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="Chapter 1/Chap1.1ML.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 1 Knowing Our Numbers Ex 1.1</span>
-                    </a>
-                    <a href="Chapter 1/1.2ML.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 1 Knowing Our Numbers Ex 1.2</span>
-                    </a>
-                    <a href="Chapter 1/1.3ML.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 1 Knowing Our Numbers Ex 1.3</span>
-                    </a>
-                    <a href="Chapter 1/1.4ML.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 1 Knowing Our Numbers Ex 1.4</span>
-                    </a>
-                    <a href="Chapter 1/1.5ML.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 1 Knowing Our Numbers Ex 1.5</span>
-                    </a>
-                    <a href="Chapter 1/mcqs.html" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 1 Knowing Our Numbers Objective Type Questions</span>
-                    </a>
-                    <a href="Chapter 1/check-your-progress.html" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 1 Knowing Our Numbers Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 1 Knowing Our Numbers</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="Chapter 1/Chap1.1ML.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.1</a></li>
+                    <li><a href="Chapter 1/1.2ML.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.2</a></li>
+                    <li><a href="Chapter 1/1.3ML.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.3</a></li>
+                    <li><a href="Chapter 1/1.4ML.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.4</a></li>
+                    <li><a href="Chapter 1/1.5ML.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.5</a></li>
+                    <li><a href="Chapter 1/mcqs.html" class="chapter-link">Chapter 1 Knowing Our Numbers Objective Type Questions</a></li>
+                    <li><a href="Chapter 1/check-your-progress.html" class="chapter-link">Chapter 1 Knowing Our Numbers Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 2 Whole Numbers</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="Chapter 2/exe-2.1.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 2 Whole Numbers Ex 2.1</span>
-                    </a>
-                    <a href="Chapter 2/exe-2.2.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 2 Whole Numbers Ex 2.2</span>
-                    </a>
-                    <a href="Chapter 2/exe-2.3.html" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 2 Whole Numbers Ex 2.3</span>
-                    </a>
-                    <a href="Chapter 2/mcqs.html" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 2 Whole Numbers Objective Type Questions</span>
-                    </a>
-                    <a href="Chapter 2/check-your-progress.html" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 2 Whole Numbers Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 2 Whole Numbers</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Ex 2.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Ex 2.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Ex 2.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 3 Integers</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 3 Integers Ex 3.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 3 Integers Ex 3.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 3 Integers Ex 3.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 3 Integers Ex 3.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 3 Integers Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 3 Integers Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 3 Integers</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 3 Integers Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 3 Integers Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="model-paper-card my-12">
+            <div class="model-paper mb-12">
                 <a href="#">MODEL QUESTION PAPER 1 (Based on Chapters 1, 2 and 3)</a>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 4 Playing with Numbers</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 4 Playing with Numbers Ex 4.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 4 Playing with Numbers Ex 4.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 4 Playing with Numbers Ex 4.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 4 Playing with Numbers Ex 4.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 4 Playing with Numbers Ex 4.5</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 4 Playing with Numbers Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 4 Playing with Numbers Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 4 Playing with Numbers</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.5</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 5 Sets</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 5 Sets Ex 5.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 5 Sets Ex 5.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 5 Sets Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 5 Sets Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 5 Sets</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 5 Sets Ex 5.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 5 Sets Ex 5.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 5 Sets Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 5 Sets Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 6 Fractions</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 6 Fractions Ex 6.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 6 Fractions Ex 6.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 6 Fractions Ex 6.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 6 Fractions Ex 6.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <span class="link-text">Chapter 6 Fractions Ex 6.5</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <span class="link-text">Chapter 6 Fractions Ex 6.6</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <span class="link-text">Chapter 6 Fractions Ex 6.7</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 6 Fractions Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 6 Fractions Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 6 Fractions</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.5</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.6</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.7</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="model-paper-card my-12">
+            <div class="model-paper mb-12">
                 <a href="#">MODEL QUESTION PAPER 2 (Based on Chapters 4, 5 and 6)</a>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 7 Decimals</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 7 Decimals Ex 7.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 7 Decimals Ex 7.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 7 Decimals Ex 7.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 7 Decimals Ex 7.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 7 Decimals Ex 7.5</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 7 Decimals Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 7 Decimals Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 7 Decimals</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.5</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 8 Ratio and Proportion</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 8 Ratio and Proportion Ex 8.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 8 Ratio and Proportion Ex 8.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 8 Ratio and Proportion Ex 8.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 8 Ratio and Proportion Ex 8.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 8 Ratio and Proportion Ex 8.5</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 8 Ratio and Proportion Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 8 Ratio and Proportion Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 8 Ratio and Proportion</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.5</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="model-paper-card my-12">
+            <div class="model-paper mb-12">
                 <a href="#">MODEL QUESTION PAPER 3 (Based on Chapters 1 to 8)</a>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 9 Algebra</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 9 Algebra Ex 9.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 9 Algebra Ex 9.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 9 Algebra Ex 9.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 9 Algebra Ex 9.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 9 Algebra Ex 9.5</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 9 Algebra Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 9 Algebra Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 9 Algebra</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.5</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 10 Basic Geometrical Concept</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 10 Basic Geometrical concept Ex 10.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 10 Basic Geometrical concept Ex 10.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 10 Basic Geometrical concept Ex 10.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 10 Basic Geometrical concept Ex 10.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-brain icon"></i>
-                        <span class="link-text">Chapter 10 Basic Geometrical concept Mental Maths Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 10 Basic Geometrical concept Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 10 Basic Geometrical concept Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 10 Basic Geometrical Concept</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Mental Maths Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 11 Understanding Elementary Shapes</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Ex 11.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Ex 11.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Ex 11.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Ex 11.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Ex 11.5</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Ex 11.6</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 11 Understanding Elementary Shapes Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 11 Understanding Elementary Shapes</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.5</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.6</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="model-paper-card my-12">
+            <div class="model-paper mb-12">
                 <a href="#">MODEL QUESTION PAPER 4 (Based on Chapters 9, 10 and 11)</a>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 12 Symmetry</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 12 Symmetry Ex 12.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 12 Symmetry Ex 12.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 12 Symmetry Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 12 Symmetry Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 12 Symmetry</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Ex 12.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Ex 12.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 13 Practical Geometry</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 13 Practical Geometry Ex 13.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 13 Practical Geometry Ex 13.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 13 Practical Geometry Ex 13.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 13 Practical Geometry Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 13 Practical Geometry Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 13 Practical Geometry</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Ex 13.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Ex 13.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Ex 13.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 14 Mensuration</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 14 Mensuration Ex 14.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 14 Mensuration Ex 14.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 14 Mensuration Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 14 Mensuration Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 14 Mensuration</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Ex 14.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Ex 14.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="model-paper-card my-12">
+            <div class="model-paper mb-12">
                 <a href="#">MODEL QUESTION PAPER 5 (Based on Chapters 12, 13 and 14)</a>
             </div>
 
-            <div class="chapter-section mb-10">
-                <h2 class="chapter-heading text-3xl lg:text-4xl mb-8">Chapter 15 Data Handling</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 15 Data Handling Ex 15.1</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 15 Data Handling Ex 15.2</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 15 Data Handling Ex 15.3</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 15 Data Handling Ex 15.4</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <span class="link-text">Chapter 15 Data Handling Ex 15.5</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-check-circle icon"></i>
-                        <span class="link-text">Chapter 15 Data Handling Objective Type Questions</span>
-                    </a>
-                    <a href="#" class="exercise-link-card">
-                        <i class="fas fa-clipboard-check icon"></i>
-                        <span class="link-text">Chapter 15 Data Handling Check Your Progress</span>
-                    </a>
-                </div>
+            <div class="chapter-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 15 Data Handling</h2>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.1</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.2</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.3</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.4</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.5</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Objective Type Questions</a></li>
+                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Check Your Progress</a></li>
+                </ul>
             </div>
 
-            <div class="model-paper-card my-12">
+            <div class="model-paper">
                 <a href="#">MODEL QUESTION PAPER 6 (Based on Chapters 9 to 15)</a>
             </div>
 
         </div>
     </main>
 
-    <footer class="footer py-8 text-center">
-        <div class="container mx-auto">
+    <footer class="bg-black text-gray-500 py-8 mt-16">
+        <div class="container mx-auto text-center text-sm">
             <p>&copy; 2025 AcademSolve. All rights reserved.</p>
             <p class="mt-2">Designed with passion for students.</p>
         </div>
