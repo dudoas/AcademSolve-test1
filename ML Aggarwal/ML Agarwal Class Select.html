@@ -30,97 +30,213 @@
             background: #777777; /* Lighter gray on hover */
         }
 
-        /* Custom styles for subtle animations/transitions */
+        /* General styles from previous ML Aggarwal Class Select.html */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #222;
+            margin-bottom: 40px;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .hero-section p {
+            font-size: 20px;
+            color: #bbb;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
         .solution-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* More refined transition */
+            background-color: #2D3748; /* Matching previous card background */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .solution-card:hover {
-            transform: translateY(-8px) scale(1.02); /* More pronounced lift and slight scale */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Stronger, darker shadow on hover */
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-color: #3B82F6; /* Accent blue from main page */
+        }
+        .solution-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .solution-card p {
+            font-size: 16px;
+            color: #A0AEC0; /* Muted text color */
+            line-height: 1.5;
+        }
+        .footer {
+            background-color: #111827; /* Even darker footer */
+            color: #9CA3AF; /* Lighter gray for footer text */
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 40px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+            .header .logo {
+                margin-bottom: 15px;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            .hero-section {
+                padding: 60px 20px;
+            }
+            .hero-section h1 {
+                font-size: 36px;
+            }
+            .hero-section p {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 28px;
+            }
+            .hero-section p {
+                font-size: 16px;
+            }
+            .solution-card {
+                padding: 20px;
+            }
+            .solution-card h3 {
+                font-size: 20px;
+            }
+            .solution-card p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
 
-    <header class="bg-gray-900 shadow-lg py-5 px-6 md:px-12 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-extrabold text-blue-400 tracking-tight">AcademSolve</a>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8">
-                    <li><a href="#" class="text-gray-300 hover:text-blue-400 font-semibold text-lg transition duration-300 ease-in-out">ML Aggarwal</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-blue-400 font-semibold text-lg transition duration-300 ease-in-out">RS Aggarwal</a></li>
-                </ul>
-            </nav>
-            <button class="md:hidden text-gray-300 hover:text-blue-400 focus:outline-none">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
+    <header class="header">
+        <a href="/" class="logo">AcademSolve</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="flex-grow container mx-auto px-6 py-16 md:py-24">
-        <div class="max-w-5xl mx-auto bg-gray-800 p-10 md:p-16 rounded-xl shadow-2xl">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-10 text-center leading-tight">
-                <span class="block text-blue-400">ML Aggarwal</span> Solutions
-            </h1>
+    <main class="container">
+        <div class="hero-section">
+            <h1>ML Aggarwal Solutions</h1>
+            <p>Access comprehensive, chapter-wise solutions for all ML Aggarwal textbooks. Select your class to get started.</p>
+        </div>
 
-            <p class="text-2xl font-semibold text-gray-300 mb-8 border-b-4 border-blue-600 pb-4 text-center">
-                Explore comprehensive solutions for your textbooks:
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 6 ICSE</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Detailed and easy-to-understand solutions for Class 6 ICSE curriculum.</p>
+        <div class="class-selection">
+            <div class="solutions-grid">
+                <a href="Class-6/index.html" class="solution-card">
+                    <h3>Class - 6</h3>
+                    <p>Comprehensive solutions for Class 6 Maths problems.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 7 ICSE</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Step-by-step guidance for all exercises in Class 7 ICSE textbooks.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 7</h3>
+                    <p>Expert solutions for Class 7 Maths, chapter by chapter.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 8 ICSE</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">In-depth explanations and solutions for Class 8 ICSE topics.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 8</h3>
+                    <p>Detailed solutions for Class 8 Maths, building strong foundations.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 9 ICSE</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Master Class 9 ICSE concepts with our comprehensive solutions.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 9</h3>
+                    <p>In-depth solutions for Class 9 Maths, preparing you for higher grades.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 10 ICSE</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Ace your exams with complete solutions for Class 10 ICSE.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 10</h3>
+                    <p>Complete solutions for Class 10 Maths, essential for board exams.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 11 ISC Vol-1</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Solutions for Class 11 ISC, Volume 1, covering all chapters.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 11 ISC Vol-1</h3>
+                    <p>Thorough solutions for Class 11 ISC, Volume 1, with clear explanations.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 11 ISC Vol-2</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Complete solutions for Class 11 ISC, Volume 2, for deeper understanding.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 11 ISC Vol-2</h3>
+                    <p>Complete solutions for Class 11 ISC, Volume 2, for deeper understanding.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 12 ISC Vol-1</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Expert solutions for Class 12 ISC, Volume 1, exam preparation.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 12 ISC Vol-1</h3>
+                    <p>Expert solutions for Class 12 ISC, Volume 1, exam preparation.</p>
                 </a>
 
-                <a href="#" class="solution-card block bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600 flex flex-col items-center text-center">
-                    <h3 class="text-2xl font-bold text-white mb-3">Class - 12 ISC Vol-2</h3>
-                    <p class="text-gray-300 text-base leading-relaxed">Comprehensive solutions for Class 12 ISC, Volume 2, with clear explanations.</p>
+                <a href="#" class="solution-card">
+                    <h3>Class - 12 ISC Vol-2</h3>
+                    <p>Comprehensive solutions for Class 12 ISC, Volume 2, with clear explanations.</p>
                 </a>
             </div>
         </div>
     </main>
 
-    <footer class="bg-black text-gray-500 py-8 mt-16">
-        <div class="container mx-auto text-center text-sm">
-            <p>&copy; 2025 AcademSolve. All rights reserved.</p>
-            <p class="mt-2">Designed with passion for students.</p>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2025 AcademSolve. All rights reserved.</p>
     </footer>
 
 </body>
