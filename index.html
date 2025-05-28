@@ -4,44 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcademSolve - Free Solutions for ICSE and CBSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Custom CSS Variables for a refined dark theme */
         :root {
-            --dark-gray: #2c2f33;
-            --light-gray: #ececec;
-            --white: #ffffff;
-            --text-color: #bbbbbb;
-            --card-bg: #36393f;
+            --primary-bg: #1A202C; /* Deeper, slightly purplish dark gray */
+            --secondary-bg: #2D3748; /* Slightly lighter for cards/sections */
+            --accent-blue: #3B82F6; /* Vibrant blue for highlights */
+            --text-light: #E2E8F0; /* Light gray for general text */
+            --text-muted: #A0AEC0; /* Muted gray for secondary text */
+            --white: #FFFFFF;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--white); /* Main background is white */
-            color: var(--dark-gray);
+            background-color: var(--primary-bg); /* Use new primary background */
+            color: var(--text-light); /* Use new light text color */
             line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2D3748; /* Darker track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A5568; /* Medium gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366F1; /* Accent blue on hover */
         }
 
         .header {
+            background-color: var(--secondary-bg); /* Slightly lighter header */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
         }
 
         .header .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--dark-gray);
+            font-size: 2.25rem; /* text-3xl */
+            font-weight: 800; /* font-extrabold */
+            color: var(--accent-blue); /* Accent color for logo */
             text-decoration: none;
+            letter-spacing: -0.05em; /* tighter tracking */
+            transition: color 0.3s ease;
+        }
+        .header .logo:hover {
+            color: #5A67D8; /* Slightly darker accent on hover */
         }
 
         .nav-links {
@@ -52,88 +78,152 @@
         }
 
         .nav-links li {
-            margin-left: 40px;
+            margin-left: 2.5rem; /* ml-10 */
         }
 
         .nav-links a {
-            color: var(--dark-gray);
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            font-size: 1.125rem; /* text-lg */
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
         }
 
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
         .nav-links a:hover {
-            color: #007bff; /* A nice hover color */
+            color: var(--accent-blue);
+            transform: translateY(-2px);
         }
 
         .hero-section {
-            background-color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #2A364C 100%); /* Subtle gradient */
             color: var(--white);
             text-align: center;
-            padding: 100px 5%;
+            padding: 120px 5% 100px; /* More vertical padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh; /* Ensure it takes up a good portion of the viewport */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-section h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--white);
+            font-size: 3.75rem; /* text-6xl */
+            font-weight: 800; /* font-extrabold */
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.1;
+            max-width: 900px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle text shadow */
         }
 
         .hero-section p {
-            font-size: 20px;
-            color: var(--text-color);
-            max-width: 800px;
-            margin: 0 auto;
+            font-size: 1.375rem; /* text-2xl */
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 2.5rem; /* mb-10 */
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 1rem 2.5rem; /* py-4 px-10 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 700; /* font-bold */
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); /* Shadow matching accent */
+        }
+        .cta-button:hover {
+            background-color: #5A67D8; /* Slightly darker blue on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
         }
 
         .solutions-section {
-            background-color: var(--dark-gray); /* Same background as hero section */
+            background-color: var(--primary-bg); /* Main background */
             padding: 80px 5%;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px; /* Space between cards */
+            flex-direction: column; /* Force cards to stack vertically */
+            align-items: center; /* Center cards horizontally */
+            gap: 2.5rem; /* Space between cards when stacked */
         }
 
         .solution-card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background-color: var(--secondary-bg); /* Card background */
+            padding: 2.5rem; /* p-10 */
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Deeper shadow */
             text-align: center;
-            width: 45%; /* Adjust width for two cards per row */
-            min-width: 300px; /* Minimum width to prevent cards from getting too small */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 90%; /* Make card take almost full width to stack */
+            max-width: 550px; /* Limit max width for readability */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             text-decoration: none; /* For the <a> tag */
             color: inherit; /* Inherit text color from its children */
+            display: flex; /* Use flex for internal alignment */
+            flex-direction: column;
+            align-items: center;
         }
 
         .solution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px); /* More pronounced lift */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Even deeper shadow */
+            border-color: var(--accent-blue); /* Highlight border on hover */
         }
 
         .solution-card h3 {
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 2rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
             color: var(--white);
-            margin-bottom: 15px;
+            margin-bottom: 1rem; /* mb-4 */
+            position: relative;
+        }
+
+        .solution-card h3::after {
+            content: '';
+            position: absolute;
+            width: 50px; /* Short underline */
+            height: 3px;
+            background-color: var(--accent-blue);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         .solution-card p {
-            font-size: 18px;
-            color: var(--text-color);
-            line-height: 1.5;
+            font-size: 1.125rem; /* text-lg */
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: #111827; /* Even darker footer */
+            color: #9CA3AF; /* Lighter gray for footer text */
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .solution-card {
-                width: 70%; /* 1 card per row on medium screens */
-            }
-        }
-
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -142,6 +232,7 @@
 
             .header .logo {
                 margin-bottom: 15px;
+                font-size: 2rem;
             }
 
             .nav-links {
@@ -153,23 +244,45 @@
                 margin: 10px 0;
             }
 
+            .hero-section {
+                padding: 80px 5% 60px;
+            }
+            .hero-section h1 {
+                font-size: 2.5rem; /* text-4xl */
+            }
+            .hero-section p {
+                font-size: 1rem; /* text-base */
+            }
+
+            .solutions-section {
+                padding: 60px 5%;
+                gap: 2rem;
+            }
             .solution-card {
-                width: 90%; /* 1 card per row on small screens */
+                padding: 30px;
+                width: 100%; /* Full width on smaller screens */
+            }
+            .solution-card h3 {
+                font-size: 1.75rem; /* text-2xl */
+            }
+            .solution-card p {
+                font-size: 1rem; /* text-base */
+            }
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
             .hero-section h1 {
-                font-size: 32px;
+                font-size: 2rem; /* text-3xl */
             }
             .hero-section p {
-                font-size: 16px;
-            }
-            .solution-card {
-                padding: 30px;
+                font-size: 0.875rem; /* text-sm */
             }
             .solution-card h3 {
-                font-size: 20px;
+                font-size: 1.5rem; /* text-xl */
             }
         }
     </style>
@@ -190,24 +303,26 @@
 
     <main>
         <section class="hero-section">
-            <h1>Free Solutions for ICSE</h1>
-            <p>Access comprehensive solutions for your textbooks easily and efficiently.</p>
+            <h1>Unlock Your Potential with <span class="text-accent-blue">AcademSolve</span></h1>
+            <p>Your ultimate destination for comprehensive, step-by-step solutions to ICSE and CBSE textbooks. Master every concept with ease.</p>
+            <a href="#solutions-section" class="cta-button">Explore Solutions</a>
         </section>
 
-        <section class="solutions-section">
+        <section id="solutions-section" class="solutions-section">
             <a href="ML Aggarwal/ML Agarwal Class Select.html" class="solution-card">
                 <h3>ML Aggarwal</h3>
-                <p>Access solutions for ML Aggarwal books.</p>
+                <p>Access detailed, chapter-wise solutions for ML Aggarwal textbooks.</p>
             </a>
             <div class="solution-card">
                 <h3>RS Aggarwal</h3>
-                <p>Access solutions for RS Aggarwal books.</p>
+                <p>Find clear and concise solutions for RS Aggarwal exercises.</p>
             </div>
-        </section>
+            </section>
     </main>
 
     <footer class="footer">
         <p>&copy; 2025 AcademSolve. All rights reserved.</p>
+        <p class="mt-2">Designed with passion for students.</p>
     </footer>
 
 </body>
