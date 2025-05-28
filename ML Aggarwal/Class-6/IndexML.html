@@ -9,63 +9,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Consistent CSS Variables for a refined dark theme */
-        :root {
-            --primary-bg: #1A202C; /* Deeper, slightly purplish dark gray */
-            --secondary-bg: #2D3748; /* Slightly lighter for cards/sections */
-            --accent-blue: #3B82F6; /* Vibrant blue for highlights */
-            --text-light: #E2E8F0; /* Light gray for general text */
-            --text-muted: #A0AEC0; /* Muted gray for secondary text */
-            --white: #FFFFFF;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--primary-bg); /* Dark background */
-            color: var(--text-light); /* Light text */
-            line-height: 1.6;
-            scroll-behavior: smooth;
+            background-color: #1a1a1a; /* Dark background */
+            color: #eeeeee; /* Light text */
         }
         /* Custom scrollbar for better aesthetics */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #2D3748; /* Darker track */
+            background: #333333; /* Darker track */
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #4A5568; /* Medium gray thumb */
+            background: #555555; /* Medium gray thumb */
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #6366F1; /* Accent blue on hover */
+            background: #777777; /* Lighter gray on hover */
         }
 
-        /* Header styles (consistent with main pages) */
         .header {
-            background-color: var(--secondary-bg);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background-color: #222222;
             padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #333333;
         }
 
         .header .logo {
-            font-size: 2.25rem; /* text-3xl */
-            font-weight: 800; /* font-extrabold */
-            color: var(--accent-blue);
+            font-size: 28px;
+            font-weight: 700;
+            color: #4CAF50; /* Green accent for logo */
             text-decoration: none;
-            letter-spacing: -0.05em;
-            transition: color 0.3s ease;
-        }
-        .header .logo:hover {
-            color: #5A67D8;
         }
 
         .nav-links {
@@ -76,152 +54,133 @@
         }
 
         .nav-links li {
-            margin-left: 2.5rem; /* ml-10 */
+            margin-left: 40px;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: #eeeeee;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem; /* text-lg */
-            transition: color 0.3s ease, transform 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent-blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .nav-links a:hover {
-            color: var(--accent-blue);
-            transform: translateY(-2px);
-        }
-
-        /* Main content area styling */
-        .main-content-wrapper {
-            background-color: var(--secondary-bg); /* Darker background for content area */
-            padding: 2.5rem; /* p-10 */
-            border-radius: 1rem; /* rounded-xl */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .chapter-section {
-            margin-bottom: 3rem; /* Space between chapter blocks */
-        }
-
-        .chapter-section h2 {
-            font-size: 2.25rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            color: var(--white);
-            margin-bottom: 1.5rem; /* mb-6 */
-            border-bottom: 2px solid var(--accent-blue); /* Blue accent line */
-            padding-bottom: 0.75rem; /* pb-3 */
-        }
-
-        .chapter-link {
-            display: block; /* Make links block level */
-            padding: 0.75rem 0; /* py-3 */
-            color: var(--text-light); /* Light text for links */
             font-weight: 500;
-            text-decoration: none;
-            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            border-radius: 0.5rem; /* Slightly rounded corners for hover effect */
-            padding-left: 1rem; /* Indent text */
+            font-size: 18px;
+            transition: color 0.3s ease;
         }
-        .chapter-link:hover {
-            color: var(--accent-blue); /* Accent blue on hover */
-            transform: translateX(8px); /* Subtle slide effect on hover */
-            background-color: rgba(59, 130, 246, 0.1); /* Light blue background on hover */
+
+        .nav-links a:hover {
+            color: #4CAF50; /* Green accent on hover */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-content {
+            background-color: #2a2a2a; /* Slightly lighter dark for content area */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #4CAF50; /* Green accent for chapter titles */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #bbbbbb;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.2s ease-in-out;
+            display: block; /* Make links take full width for clickability */
+            padding: 8px 0; /* Add some padding for easier clicking */
+        }
+
+        a:hover {
+            color: #4CAF50; /* Green accent on hover */
         }
 
         .model-paper {
-            background-color: #334155; /* Slightly different dark background for distinction */
-            padding: 1.5rem 2rem;
-            border-radius: 0.75rem;
-            margin-top: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .model-paper a {
-            color: #facc15; /* A gold/yellow for model paper link */
-            font-weight: 700;
-            font-size: 1.25rem;
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-        .model-paper a:hover {
-            color: #eab308; /* Darker yellow on hover */
         }
 
-        /* Footer styles (consistent with main pages) */
+        .model-paper a {
+            color: #FFD700; /* Gold color for model paper */
+            font-weight: 600;
+            font-size: 20px;
+        }
+
         .footer {
-            background-color: #111827;
-            color: #9CA3AF;
-            padding: 40px 5%;
+            background-color: #222222;
+            color: #aaaaaa;
+            padding: 20px;
             text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 60px;
+            font-size: 14px;
+            margin-top: 50px;
+            border-top: 1px solid #333333;
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                padding: 15px 5%;
+                padding: 15px;
             }
             .header .logo {
                 margin-bottom: 15px;
-                font-size: 2rem;
+                font-size: 24px;
             }
             .nav-links {
                 flex-direction: column;
                 gap: 10px;
                 align-items: center;
             }
-            .main-content-wrapper {
-                padding: 1.5rem;
+            .main-content {
+                padding: 20px;
             }
             h1 {
-                font-size: 2.5rem !important; /* text-4xl */
+                font-size: 32px;
             }
-            .chapter-section h2 {
-                font-size: 1.75rem; /* text-2xl */
+            h2 {
+                font-size: 24px;
             }
-            .chapter-link {
-                font-size: 0.95rem;
-                padding: 0.6rem 0;
+            a {
+                font-size: 16px;
             }
             .model-paper a {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem !important; /* text-3xl */
-            }
-            .chapter-section h2 {
-                font-size: 1.5rem; /* text-xl */
-            }
-            .chapter-link {
-                font-size: 0.875rem; /* text-sm */
+                font-size: 18px;
             }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
 
     <header class="header">
         <a href="/" class="logo">AcademSolve</a>
@@ -235,213 +194,211 @@
         </nav>
     </header>
 
-    <main class="flex-grow container mx-auto px-6 py-16 md:py-24">
-        <div class="max-w-4xl mx-auto main-content-wrapper">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-10 text-center leading-tight">
-                <span class="block text-accent-blue">Class 6 ML Aggarwal</span> Solutions
-            </h1>
+    <div class="container">
+        <div class="main-content">
+            <h1>Class 6 ML Aggarwal Solutions</h1>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 1 Knowing Our Numbers</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="Chapter 1/exe-1.1.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.1</a></li>
-                    <li><a href="Chapter 1/exe-1.2.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.2</a></li>
-                    <li><a href="Chapter 1/exe-1.3.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.3</a></li>
-                    <li><a href="Chapter 1/exe-1.4.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.4</a></li>
-                    <li><a href="Chapter 1/exe-1.5.html" class="chapter-link">Chapter 1 Knowing Our Numbers Ex 1.5</a></li>
-                    <li><a href="Chapter 1/mcqs.html" class="chapter-link">Chapter 1 Knowing Our Numbers Objective Type Questions</a></li>
-                    <li><a href="Chapter 1/check-your-progress.html" class="chapter-link">Chapter 1 Knowing Our Numbers Check Your Progress</a></li>
+                <h2>Chapter 1 Knowing Our Numbers</h2>
+                <ul>
+                    <li><a href="Chapter 1/Chap1.1ML.html">Chapter 1 Knowing Our Numbers Ex 1.1</a></li>
+                    <li><a href="Chapter 1/1.2ML.html">Chapter 1 Knowing Our Numbers Ex 1.2</a></li>
+                    <li><a href="Chapter 1/1.3ML.html">Chapter 1 Knowing Our Numbers Ex 1.3</a></li>
+                    <li><a href="Chapter 1/1.4ML.html">Chapter 1 Knowing Our Numbers Ex 1.4</a></li>
+                    <li><a href="Chapter 1/1.5ML.html">Chapter 1 Knowing Our Numbers Ex 1.5</a></li>
+                    <li><a href="Chapter 1/mcqs.html">Chapter 1 Knowing Our Numbers Objective Type Questions</a></li>
+                    <li><a href="Chapter 1/check-your-progress.html">Chapter 1 Knowing Our Numbers Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 2 Whole Numbers</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Ex 2.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Ex 2.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Ex 2.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 2 Whole Numbers Check Your Progress</a></li>
+                <h2>Chapter 2 Whole Numbers</h2>
+                <ul>
+                    <li><a href="Chapter 2/exe-2.1.html">Chapter 2 Whole Numbers Ex 2.1</a></li>
+                    <li><a href="Chapter 2/exe-2.2.html">Chapter 2 Whole Numbers Ex 2.2</a></li>
+                    <li><a href="Chapter 2/exe-2.3.html">Chapter 2 Whole Numbers Ex 2.3</a></li>
+                    <li><a href="Chapter 2/mcqs.html">Chapter 2 Whole Numbers Objective Type Questions</a></li>
+                    <li><a href="Chapter 2/check-your-progress.html">Chapter 2 Whole Numbers Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 3 Integers</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 3 Integers Ex 3.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 3 Integers Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 3 Integers Check Your Progress</a></li>
+                <h2>Chapter 3 Integers</h2>
+                <ul>
+                    <li><a href="#">Chapter 3 Integers Ex 3.1</a></li>
+                    <li><a href="#">Chapter 3 Integers Ex 3.2</a></li>
+                    <li><a href="#">Chapter 3 Integers Ex 3.3</a></li>
+                    <li><a href="#">Chapter 3 Integers Ex 3.4</a></li>
+                    <li><a href="#">Chapter 3 Integers Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 3 Integers Check Your Progress</a></li>
                 </ul>
             </div>
 
-            <div class="model-paper mb-12">
+            <div class="model-paper">
                 <a href="#">MODEL QUESTION PAPER 1 (Based on Chapters 1, 2 and 3)</a>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 4 Playing with Numbers</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Ex 4.5</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 4 Playing with Numbers Check Your Progress</a></li>
+                <h2>Chapter 4 Playing with Numbers</h2>
+                <ul>
+                    <li><a href="#">Chapter 4 Playing with Numbers Ex 4.1</a></li>
+                    <li><a href="#">Chapter 4 Playing with Numbers Ex 4.2</a></li>
+                    <li><a href="#">Chapter 4 Playing with Numbers Ex 4.3</a></li>
+                    <li><a href="#">Chapter 4 Playing with Numbers Ex 4.4</a></li>
+                    <li><a href="#">Chapter 4 Playing with Numbers Ex 4.5</a></li>
+                    <li><a href="#">Chapter 4 Playing with Numbers Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 4 Playing with Numbers Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 5 Sets</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 5 Sets Ex 5.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 5 Sets Ex 5.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 5 Sets Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 5 Sets Check Your Progress</a></li>
+                <h2>Chapter 5 Sets</h2>
+                <ul>
+                    <li><a href="#">Chapter 5 Sets Ex 5.1</a></li>
+                    <li><a href="#">Chapter 5 Sets Ex 5.2</a></li>
+                    <li><a href="#">Chapter 5 Sets Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 5 Sets Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 6 Fractions</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.5</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.6</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Ex 6.7</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 6 Fractions Check Your Progress</a></li>
+                <h2>Chapter 6 Fractions</h2>
+                <ul>
+                    <li><a href="#">Chapter 6 Fractions Ex 6.1</a></li>
+                    <li><a href="#">Chapter 6 Fractions Ex 6.2</a></li>
+                    <li><a href="#">Chapter 6 Fractions Ex 6.3</a></li>
+                    <li><a href="#">Chapter 6 Fractions Ex 6.4</a></li>
+                    <li><a href="#">Chapter 6 Fractions Ex 6.5</a></li>
+                    <li><a href="#">Chapter 6 Fractions Ex 6.6</a></li>
+                    <li><a href="#">Chapter 6 Fractions Ex 6.7</a></li>
+                    <li><a href="#">Chapter 6 Fractions Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 6 Fractions Check Your Progress</a></li>
                 </ul>
             </div>
 
-            <div class="model-paper mb-12">
+            <div class="model-paper">
                 <a href="#">MODEL QUESTION PAPER 2 (Based on Chapters 4, 5 and 6)</a>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 7 Decimals</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Ex 7.5</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 7 Decimals Check Your Progress</a></li>
+                <h2>Chapter 7 Decimals</h2>
+                <ul>
+                    <li><a href="#">Chapter 7 Decimals Ex 7.1</a></li>
+                    <li><a href="#">Chapter 7 Decimals Ex 7.2</a></li>
+                    <li><a href="#">Chapter 7 Decimals Ex 7.3</a></li>
+                    <li><a href="#">Chapter 7 Decimals Ex 7.4</a></li>
+                    <li><a href="#">Chapter 7 Decimals Ex 7.5</a></li>
+                    <li><a href="#">Chapter 7 Decimals Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 7 Decimals Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 8 Ratio and Proportion</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Ex 8.5</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 8 Ratio and Proportion Check Your Progress</a></li>
+                <h2>Chapter 8 Ratio and Proportion</h2>
+                <ul>
+                    <li><a href="#">Chapter 8 Ratio and Proportion Ex 8.1</a></li>
+                    <li><a href="#">Chapter 8 Ratio and Proportion Ex 8.2</a></li>
+                    <li><a href="#">Chapter 8 Ratio and Proportion Ex 8.3</a></li>
+                    <li><a href="#">Chapter 8 Ratio and Proportion Ex 8.4</a></li>
+                    <li><a href="#">Chapter 8 Ratio and Proportion Ex 8.5</a></li>
+                    <li><a href="#">Chapter 8 Ratio and Proportion Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 8 Ratio and Proportion Check Your Progress</a></li>
                 </ul>
             </div>
 
-            <div class="model-paper mb-12">
+            <div class="model-paper">
                 <a href="#">MODEL QUESTION PAPER 3 (Based on Chapters 1 to 8)</a>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 9 Algebra</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Ex 9.5</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 9 Algebra Check Your Progress</a></li>
+                <h2>Chapter 9 Algebra</h2>
+                <ul>
+                    <li><a href="#">Chapter 9 Algebra Ex 9.1</a></li>
+                    <li><a href="#">Chapter 9 Algebra Ex 9.2</a></li>
+                    <li><a href="#">Chapter 9 Algebra Ex 9.3</a></li>
+                    <li><a href="#">Chapter 9 Algebra Ex 9.4</a></li>
+                    <li><a href="#">Chapter 9 Algebra Ex 9.5</a></li>
+                    <li><a href="#">Chapter 9 Algebra Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 9 Algebra Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 10 Basic Geometrical Concept</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Ex 10.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Mental Maths Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 10 Basic Geometrical concept Check Your Progress</a></li>
+                <h2>Chapter 10 Basic Geometrical Concept</h2>
+                <ul>
+                    <li><a href="#">Chapter 10 Basic Geometrical concept Ex 10.1</a></li>
+                    <li><a href="#">Chapter 10 Basic Geometrical concept Ex 10.2</a></li>
+                    <li><a href="#">Chapter 10 Basic Geometrical concept Ex 10.3</a></li>
+                    <li><a href="#">Chapter 10 Basic Geometrical concept Ex 10.4</a></li>
+                    <li><a href="#">Chapter 10 Basic Geometrical concept Mental Maths Questions</a></li>
+                    <li><a href="#">Chapter 10 Basic Geometrical concept Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 10 Basic Geometrical concept Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 11 Understanding Elementary Shapes</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.5</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Ex 11.6</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 11 Understanding Elementary Shapes Check Your Progress</a></li>
+                <h2>Chapter 11 Understanding Elementary Shapes</h2>
+                <ul>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Ex 11.1</a></li>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Ex 11.2</a></li>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Ex 11.3</a></li>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Ex 11.4</a></li>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Ex 11.5</a></li>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Ex 11.6</a></li>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 11 Understanding Elementary Shapes Check Your Progress</a></li>
                 </ul>
             </div>
 
-            <div class="model-paper mb-12">
+            <div class="model-paper">
                 <a href="#">MODEL QUESTION PAPER 4 (Based on Chapters 9, 10 and 11)</a>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 12 Symmetry</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Ex 12.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Ex 12.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 12 Symmetry Check Your Progress</a></li>
+                <h2>Chapter 12 Symmetry</h2>
+                <ul>
+                    <li><a href="#">Chapter 12 Symmetry Ex 12.1</a></li>
+                    <li><a href="#">Chapter 12 Symmetry Ex 12.2</a></li>
+                    <li><a href="#">Chapter 12 Symmetry Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 12 Symmetry Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 13 Practical Geometry</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Ex 13.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Ex 13.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Ex 13.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 13 Practical Geometry Check Your Progress</a></li>
+                <h2>Chapter 13 Practical Geometry</h2>
+                <ul>
+                    <li><a href="#">Chapter 13 Practical Geometry Ex 13.1</a></li>
+                    <li><a href="#">Chapter 13 Practical Geometry Ex 13.2</a></li>
+                    <li><a href="#">Chapter 13 Practical Geometry Ex 13.3</a></li>
+                    <li><a href="#">Chapter 13 Practical Geometry Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 13 Practical Geometry Check Your Progress</a></li>
                 </ul>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 14 Mensuration</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Ex 14.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Ex 14.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 14 Mensuration Check Your Progress</a></li>
+                <h2>Chapter 14 Mensuration</h2>
+                <ul>
+                    <li><a href="#">Chapter 14 Mensuration Ex 14.1</a></li>
+                    <li><a href="#">Chapter 14 Mensuration Ex 14.2</a></li>
+                    <li><a href="#">Chapter 14 Mensuration Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 14 Mensuration Check Your Progress</a></li>
                 </ul>
             </div>
 
-            <div class="model-paper mb-12">
+            <div class="model-paper">
                 <a href="#">MODEL QUESTION PAPER 5 (Based on Chapters 12, 13 and 14)</a>
             </div>
 
             <div class="chapter-section">
-                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b-2 border-blue-600 pb-3">Chapter 15 Data Handling</h2>
-                <ul class="list-none p-0 m-0 space-y-2">
-                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.1</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.2</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.3</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.4</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Ex 15.5</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Objective Type Questions</a></li>
-                    <li><a href="#" class="chapter-link">Chapter 15 Data Handling Check Your Progress</a></li>
+                <h2>Chapter 15 Data Handling</h2>
+                <ul>
+                    <li><a href="#">Chapter 15 Data Handling Ex 15.1</a></li>
+                    <li><a href="#">Chapter 15 Data Handling Ex 15.2</a></li>
+                    <li><a href="#">Chapter 15 Data Handling Ex 15.3</a></li>
+                    <li><a href="#">Chapter 15 Data Handling Ex 15.4</a></li>
+                    <li><a href="#">Chapter 15 Data Handling Ex 15.5</a></li>
+                    <li><a href="#">Chapter 15 Data Handling Objective Type Questions</a></li>
+                    <li><a href="#">Chapter 15 Data Handling Check Your Progress</a></li>
                 </ul>
             </div>
 
@@ -450,12 +407,12 @@
             </div>
 
         </div>
-    </main>
+    </div>
 
     <footer class="footer">
-        <div class="container mx-auto text-center text-sm">
+        <div class="container">
             <p>&copy; 2025 AcademSolve. All rights reserved.</p>
-            <p class="mt-2">Designed with passion for students.</p>
+            <p>Designed with passion for students.</p>
         </div>
     </footer>
 
