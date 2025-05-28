@@ -31,36 +31,39 @@
             align-items: center;
             padding: 20px 5%;
             background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .header .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--dark-gray);
             text-decoration: none;
         }
 
-        .header .nav-links {
+        .nav-links {
             list-style: none;
+            display: flex;
             margin: 0;
             padding: 0;
-            display: flex;
         }
 
-        .header .nav-links li {
-            margin-left: 30px;
+        .nav-links li {
+            margin-left: 40px;
         }
 
-        .header .nav-links a {
+        .nav-links a {
             color: var(--dark-gray);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .header .nav-links a:hover {
-            color: #007bff; /* Example hover color */
+        .nav-links a:hover {
+            color: #007bff; /* A nice hover color */
         }
 
         .hero-section {
@@ -68,94 +71,86 @@
             color: var(--white);
             text-align: center;
             padding: 100px 5%;
-            margin-top: 20px; /* Space between header and hero section */
         }
 
         .hero-section h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
+            font-size: 48px;
             font-weight: 700;
-            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--white);
         }
 
         .hero-section p {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--text-color);
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .solutions-section {
-            background-color: var(--dark-gray); /* Same as hero section background */
-            padding: 60px 5%;
+            background-color: var(--dark-gray); /* Same background as hero section */
+            padding: 80px 5%;
             display: flex;
-            justify-content: center;
-            gap: 30px;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px; /* Space between cards */
         }
 
         .solution-card {
             background-color: var(--card-bg);
-            color: var(--white);
             padding: 40px;
-            border-radius: 8px;
-            width: 30%; /* Approx 3 cards per row */
-            min-width: 280px; /* Minimum width for responsiveness */
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            width: 45%; /* Adjust width for two cards per row */
+            min-width: 300px; /* Minimum width to prevent cards from getting too small */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            text-decoration: none; /* For the <a> tag */
+            color: inherit; /* Inherit text color from its children */
         }
 
         .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
         }
 
         .solution-card h3 {
             font-size: 24px;
-            margin-bottom: 15px;
             font-weight: 600;
+            color: var(--white);
+            margin-bottom: 15px;
         }
 
         .solution-card p {
-            font-size: 16px;
+            font-size: 18px;
             color: var(--text-color);
+            line-height: 1.5;
         }
 
         /* Responsive adjustments */
         @media (max-width: 992px) {
             .solution-card {
-                width: 45%; /* 2 cards per row on medium screens */
+                width: 70%; /* 1 card per row on medium screens */
             }
         }
 
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                align-items: flex-start;
+                padding: 15px 5%;
             }
 
-            .header .nav-links {
-                margin-top: 15px;
-                flex-wrap: wrap;
+            .header .logo {
+                margin-bottom: 15px;
             }
 
-            .header .nav-links li {
-                margin-left: 0;
-                margin-right: 20px;
-                margin-bottom: 10px;
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .hero-section {
-                padding: 80px 5%;
-            }
-
-            .hero-section h1 {
-                font-size: 40px;
+            .nav-links li {
+                margin: 10px 0;
             }
 
             .solution-card {
@@ -200,16 +195,20 @@
         </section>
 
         <section class="solutions-section">
-            <div class="solution-card">
+            <a href="ML Aggarwal/ML Agarwal Class Select.html" class="solution-card">
                 <h3>ML Aggarwal</h3>
                 <p>Access solutions for ML Aggarwal books.</p>
-            </div>
+            </a>
             <div class="solution-card">
                 <h3>RS Aggarwal</h3>
                 <p>Access solutions for RS Aggarwal books.</p>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 AcademSolve. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
